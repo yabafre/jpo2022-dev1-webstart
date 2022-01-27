@@ -1,0 +1,116 @@
+@import 'reset';
+
+:root {
+  --cell-width: calc(100vw / 64);
+  --primary-color: #063859;
+  --secondary-color: #74bcec;
+  --tertiary-color: #c4e0f2;
+  --gray-color: #333f46;
+  --small-radius: calc(100vw / 64);
+  --big-radius: calc(200vw / 64);
+}
+
+body {
+  background-color: var(--tertiary-color);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  color: var(--primary-color);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(64, var(--cell-width));
+  grid-template-rows: repeat(36, var(--cell-width));
+}
+
+h1 {
+  grid-area: 3 / 5 / 8 / 35;
+  font-size: calc(var(--cell-width) * (59.57 / 20));
+  line-height: 70.2%;
+  align-self: end;
+
+  strong {
+    text-transform: uppercase;
+    font-size: calc(var(--cell-width) * (68.4 / 20));
+    font-weight: 700;
+  }
+}
+
+h2 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  grid-area: 3 / 2 / 8 / 5;
+  justify-self: end;
+  font-size: calc(var(--cell-width) * (32.76 / 20));
+  font-weight: 700;
+  line-height: 42%;
+  padding-left: calc(var(--cell-width) * (8 / 20));
+  margin-bottom: calc(var(--cell-width) * (-3 / 20));
+  text-transform: lowercase;
+
+  strong {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: calc(var(--cell-width) * (12.6 / 20));
+  }
+}
+
+.qr {
+  font-weight: 200;
+  grid-area: 29 / 41 / 35 / 47;
+  background-color: var(--gray-color);
+  border-radius: var(--small-radius);
+}
+
+.site {
+  grid-area: 15 / 51 / 35 / 63;
+  background-color: var(--gray-color);
+  border-radius: var(--small-radius);
+}
+
+.project {
+  grid-area: 9 / 3 / 35 / 35;
+  display: grid;
+  grid-template-columns: repeat(32, var(--cell-width));
+  grid-template-rows: repeat(26, var(--cell-width));
+  background-color: var(--primary-color);
+  border-radius: var(--big-radius);
+}
+.html {
+  grid-area: 3 / 3 / 25 / 15;
+  background-color: var(--gray-color);
+  border-radius: var(--small-radius);
+}
+.js {
+  grid-area: 3 / 19 / 13 / 31;
+  background-color: var(--gray-color);
+  border-radius: var(--small-radius);
+}
+.css {
+  grid-area: 15 / 19 / 25 / 31;
+  background-color: var(--gray-color);
+  border-radius: var(--small-radius);
+}
+
+.api {
+  grid-area: 11 / 39 / 14 / 47;
+  font-family: 'Fira Code', monospace;
+  color: var(--secondary-color);
+  font-size: calc(var(--cell-width) * (55 / 20));
+  text-align: center;
+  align-self: center;
+}
+
+.github {
+  grid-area: 16 / 39 / 26 / 47;
+  width: 100%;
+  height: auto;
+}
+path {
+  fill: var(--primary-color);
+}
+
+.logo {
+  grid-area: 3 / 51 / 12 / 63;
+}
