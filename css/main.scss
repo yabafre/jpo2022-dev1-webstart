@@ -7,7 +7,9 @@
   --tertiary-color: #c4e0f2;
   --gray-color: #333f46;
   --small-radius: calc(100vw / 64);
+  --tiny-radius: calc(25vw / 64);
   --big-radius: calc(200vw / 64);
+  --arrow-width: calc(var(--cell-width) * (5 / 20));
 }
 
 body {
@@ -55,18 +57,36 @@ h2 {
     font-size: calc(var(--cell-width) * (12.6 / 20));
   }
 }
+h4 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  grid-area: 29 / 38 / 35 / 41;
+  justify-self: start;
+  font-size: calc(var(--cell-width) * (54.71 / 20));
+  font-weight: 700;
+  line-height: 42%;
+  padding-left: calc(var(--cell-width) * (8 / 20));
+  margin-bottom: calc(var(--cell-width) * (-3 / 20));
+  text-transform: lowercase;
+
+  strong {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: calc(var(--cell-width) * (22.71 / 20));
+  }
+}
 
 .qr {
   font-weight: 200;
   grid-area: 29 / 41 / 35 / 47;
-  background-color: var(--gray-color);
-  border-radius: var(--small-radius);
 }
 
 .site {
   grid-area: 15 / 51 / 35 / 63;
   background-color: var(--gray-color);
   border-radius: var(--small-radius);
+  align-self: end;
 }
 
 .project {
@@ -80,21 +100,21 @@ h2 {
 .html {
   grid-area: 3 / 3 / 25 / 15;
   background-color: var(--gray-color);
-  border-radius: var(--small-radius);
+  border-radius: var(--tiny-radius);
 }
 .js {
   grid-area: 3 / 19 / 13 / 31;
   background-color: var(--gray-color);
-  border-radius: var(--small-radius);
+  border-radius: var(--tiny-radius);
 }
 .css {
   grid-area: 15 / 19 / 25 / 31;
   background-color: var(--gray-color);
-  border-radius: var(--small-radius);
+  border-radius: var(--tiny-radius);
 }
 
 .api {
-  grid-area: 11 / 39 / 14 / 47;
+  grid-area: 12 / 39 / 15 / 47;
   font-family: 'Fira Code', monospace;
   color: var(--secondary-color);
   font-size: calc(var(--cell-width) * (55 / 20));
@@ -103,9 +123,10 @@ h2 {
 }
 
 .github {
-  grid-area: 16 / 39 / 26 / 47;
+  grid-area: 17 / 40 / 26 / 47;
   width: 100%;
   height: auto;
+  align-self: start;
 }
 path {
   fill: var(--primary-color);
@@ -113,4 +134,86 @@ path {
 
 .logo {
   grid-area: 3 / 51 / 12 / 63;
+}
+
+[class^='arrow-'] {
+  border-width: calc(var(--cell-width) * (2 / 20));
+  border-style: dashed;
+  position: relative;
+}
+[class^='arrow-']::before {
+  content: '';
+  border-width: 0 var(--arrow-width) var(--arrow-width) 0;
+  padding: var(--arrow-width);
+  border-style: solid;
+  position: absolute;
+  display: inline-block;
+}
+.secondary,
+.secondary::before {
+  border-color: var(--secondary-color);
+}
+.primary,
+.primary::before {
+  border-color: var(--primary-color);
+}
+.rl {
+  justify-self: end;
+  width: 10%;
+  animation: horizontal 5s ease-out infinite;
+}
+.rl::before {
+  left: calc(var(--arrow-width) * -1);
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+.lr {
+  justify-self: start;
+  width: 10%;
+  animation: horizontal 5s ease-out infinite;
+}
+.lr::before {
+  right: calc(var(--arrow-width) * -1);
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.arrow-api-js {
+  align-self: center;
+  grid-area: 13 / 33 / 14 / 39;
+  animation-duration: 1s;
+}
+.arrow-js-html {
+  align-self: end;
+  grid-area: 15 / 17 / 16 / 21;
+  animation-duration: 2s;
+}
+.arrow-css-html {
+  align-self: end;
+  grid-area: 27 / 17 / 28 / 21;
+  animation-duration: 4s;
+}
+.arrow-site-qr {
+  align-self: end;
+  grid-area: 31 / 47 / 32 / 51;
+  animation-duration: 2s;
+}
+.arrow-project-github {
+  align-self: center;
+  grid-area: 20 / 35 / 21 / 40;
+  animation-duration: 10s;
+}
+.arrow-github-site {
+  align-self: center;
+  grid-area: 20 / 47 / 21 / 51;
+  animation-duration: 5s;
+}
+
+@keyframes horizontal {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 100%;
+  }
 }
