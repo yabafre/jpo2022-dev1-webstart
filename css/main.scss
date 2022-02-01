@@ -31,6 +31,11 @@ h1 {
   line-height: 70.2%;
   align-self: end;
 
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
   strong {
     text-transform: uppercase;
     font-size: calc(var(--cell-width) * (68.4 / 20));
