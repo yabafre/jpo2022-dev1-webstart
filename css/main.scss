@@ -82,6 +82,25 @@ h4 {
   }
 }
 
+.main {
+  grid-area: 9 / 3 / 35 / 40;
+  font-size: calc(var(--cell-width) * (18 / 20));
+  overflow: scroll;
+
+  h3 {
+    font-weight: 700;
+    font-size: calc(var(--cell-width) * (24 / 20));
+    margin-top: calc(var(--cell-width) * (16 / 20));
+  }
+}
+ul {
+  padding-left: calc(var(--cell-width) * (20 / 20));
+}
+li {
+  list-style-type: disc;
+  margin-top: calc(var(--cell-width) * (10 / 20));
+}
+
 .qr {
   font-weight: 200;
   grid-area: 29 / 41 / 35 / 47;
