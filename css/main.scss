@@ -92,6 +92,10 @@ h4 {
   background-color: var(--gray-color);
   border-radius: var(--small-radius);
   align-self: end;
+
+  &.disney {
+    grid-area: 3 / 38 / 25 / 63;
+  }
 }
 
 .project {
@@ -143,6 +147,11 @@ path {
 
 .logo {
   grid-area: 3 / 51 / 12 / 63;
+
+  &.disney {
+    grid-area: 26 / 51 / 35 / 63;
+    align-self: end;
+  }
 }
 
 [class^='arrow-'] {
@@ -186,6 +195,16 @@ path {
   top: 50%;
   transform: translateY(-50%) rotate(-45deg);
 }
+.tb {
+  height: 10%;
+  justify-self: center;
+  animation: vertical 5s ease-out infinite;
+}
+.tb::before {
+  bottom: calc(var(--arrow-width) * -1);
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
 
 .arrow-api-js {
   align-self: center;
@@ -211,11 +230,21 @@ path {
   align-self: end;
   grid-area: 31 / 47 / 32 / 51;
   animation-duration: 2s;
+
+  &.disney {
+    align-self: start;
+    justify-self: end;
+    grid-area: 25 / 43 / 28 / 44;
+  }
 }
 .arrow-project-github {
   align-self: center;
   grid-area: 20 / 35 / 21 / 40;
   animation-duration: 10s;
+
+  &.disney {
+    grid-area: 15 / 35 / 16 / 38;
+  }
 }
 .arrow-github-site {
   align-self: center;
@@ -229,5 +258,13 @@ path {
   }
   100% {
     width: 100%;
+  }
+}
+@keyframes vertical {
+  0% {
+    height: 10%;
+  }
+  100% {
+    height: 100%;
   }
 }
