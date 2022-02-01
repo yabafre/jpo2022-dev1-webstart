@@ -1,7 +1,12 @@
 :root {
   --primary-color: #03354f;
   --secondary-color: #74bcec;
-  --tertiary-color: linear-gradient(
+  --tertiary-color: #ffe600;
+  --gray-color: #333f46;
+}
+
+body {
+  background: linear-gradient(
     to right top,
     #051937,
     #004d7a,
@@ -9,5 +14,4 @@
     #00bf72,
     #a8eb12
   );
-  --gray-color: #333f46;
 }
