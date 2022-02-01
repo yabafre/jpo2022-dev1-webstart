@@ -116,6 +116,10 @@ h4 {
   grid-area: 15 / 19 / 25 / 31;
   background-color: var(--gray-color);
   border-radius: var(--tiny-radius);
+
+  &.serie {
+    grid-area: 3 / 19 / 25 / 31;
+  }
 }
 
 .api {
@@ -197,6 +201,11 @@ path {
   align-self: end;
   grid-area: 27 / 17 / 28 / 21;
   animation-duration: 4s;
+
+  &.serie {
+    grid-area: 21 / 17 / 22 / 21;
+    align-self: center;
+  }
 }
 .arrow-site-qr {
   align-self: end;
